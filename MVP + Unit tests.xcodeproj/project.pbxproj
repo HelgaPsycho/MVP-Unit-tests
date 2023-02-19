@@ -20,6 +20,7 @@
 		9C41AC7729A28A40005F1198 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C41AC7629A28A40005F1198 /* Main.storyboard */; };
 		9C41AC7C29A28AFB005F1198 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C41AC7B29A28AFB005F1198 /* MainViewController.xib */; };
 		9C41AC7E29A28C5E005F1198 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41AC7D29A28C5E005F1198 /* ModuleBuilder.swift */; };
+		9C41AC8329A28FDF005F1198 /* MainPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41AC8229A28FDF005F1198 /* MainPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		9C41AC7629A28A40005F1198 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9C41AC7B29A28AFB005F1198 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		9C41AC7D29A28C5E005F1198 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		9C41AC8229A28FDF005F1198 /* MainPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		9C41AC5729A2853E005F1198 /* MVP + Unit testsTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C41AC8129A28F97005F1198 /* TestMainModule */,
 				9C41AC5829A2853E005F1198 /* MVP___Unit_testsTests.swift */,
 			);
 			path = "MVP + Unit testsTests";
@@ -169,6 +172,14 @@
 				9C41AC7329A285A7005F1198 /* MainPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		9C41AC8129A28F97005F1198 /* TestMainModule */ = {
+			isa = PBXGroup;
+			children = (
+				9C41AC8229A28FDF005F1198 /* MainPresenterTest.swift */,
+			);
+			path = TestMainModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C41AC5929A2853E005F1198 /* MVP___Unit_testsTests.swift in Sources */,
+				9C41AC8329A28FDF005F1198 /* MainPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

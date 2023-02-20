@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MVP___Unit_tests" customModuleProvider="target">
             <connections>
-                <outlet property="greetingLabel" destination="dAx-ZE-uZU" id="dh7-Cs-v72"/>
+                <outlet property="tableView" destination="4Nt-2M-T3b" id="WYQ-B2-2Gx"/>
                 <outlet property="view" destination="iN0-l3-epB" id="uTs-hb-Fd9"/>
             </connections>
         </placeholder>
@@ -19,25 +19,23 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAx-ZE-uZU">
-                    <rect key="frame" x="127" y="337" width="138" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQX-QJ-wGI">
-                    <rect key="frame" x="127" y="409" width="153" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Nt-2M-T3b">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
-                        <action selector="didTapButtonAction:" destination="-1" eventType="touchUpInside" id="nEt-kv-NiR"/>
+                        <outlet property="dataSource" destination="-1" id="AcS-9T-URE"/>
+                        <outlet property="delegate" destination="-1" id="WOG-zA-Vmf"/>
                     </connections>
-                </button>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4Nt-2M-T3b" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="646-AE-Ea8"/>
+                <constraint firstItem="4Nt-2M-T3b" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Irq-Ry-D4V"/>
+                <constraint firstItem="4Nt-2M-T3b" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="icG-lx-vdl"/>
+                <constraint firstItem="4Nt-2M-T3b" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="luO-FP-KD2"/>
+            </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="19.718309859154932"/>
         </view>
     </objects>

@@ -8,25 +8,25 @@
 import Foundation
 import UIKit
 
-protocol Buider {
-    static func createMain()-> UIViewController
-    static func createDetailModule(comment: Comment?) -> UIViewController
+protocol AssemblyBuiderProtocol {
+    func createMainModule(router: RouterProtocol)-> UIViewController
+    func createDetailModule(comment: Comment?, router: RouterProtocol) -> UIViewController
 }
 
-class ModulBuilder: Buider {
-    static func createMain() -> UIViewController {
+class AssemblyModuleBuilder: AssemblyBuiderProtocol {
+    func createMainModule(router: RouterProtocol) -> UIViewController {
         let networkService = NetworkService()
         let view = MainViewController()
-        let presenter = MainPresenter(view: view, networkService: networkService)
+        let presenter = MainPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
     
     
-    static func createDetailModule(comment: Comment?) -> UIViewController {
+    func createDetailModule(comment: Comment?, router: RouterProtocol) -> UIViewController {
         let networkService = NetworkService()
         let view = DetailViewController()
-        let presenter = DetailPresenter(view: view, networkservice: networkService, comment: comment)
+        let presenter = DetailPresenter(view: view, networkservice: networkService, router: router, comment: comment)
         view.presenter = presenter
         return view
     }

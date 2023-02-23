@@ -14,7 +14,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: MainViewPresenterProtocol!
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -39,8 +40,8 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let comment = presenter.comments?[indexPath.row]
-        let detailViewController = ModulBuilder.createDetailModule(comment: comment)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        presenter.tapTheComment(comment: comment)
+    
     }
 }
 

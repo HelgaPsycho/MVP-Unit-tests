@@ -25,6 +25,7 @@
 		9C41AC8829A37F61005F1198 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41AC8729A37F61005F1198 /* DetailPresenter.swift */; };
 		9C41AC8D29A3819D005F1198 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41AC8B29A3819D005F1198 /* DetailViewController.swift */; };
 		9C41AC8E29A3819D005F1198 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C41AC8C29A3819D005F1198 /* DetailViewController.xib */; };
+		9C41AC9129A7BA29005F1198 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C41AC9029A7BA29005F1198 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		9C41AC8729A37F61005F1198 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		9C41AC8B29A3819D005F1198 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9C41AC8C29A3819D005F1198 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		9C41AC9029A7BA29005F1198 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9C41AC4129A2853D005F1198 /* AppDelegate.swift */,
 				9C41AC4329A2853D005F1198 /* SceneDelegate.swift */,
 				9C41AC7D29A28C5E005F1198 /* ModuleBuilder.swift */,
+				9C41AC9029A7BA29005F1198 /* Router.swift */,
 				9C41AC8629A3752F005F1198 /* ServiceLayer */,
 				9C41AC7529A289FD005F1198 /* MainModule */,
 				9C41AC8A29A38156005F1198 /* DetailModule */,
@@ -361,6 +364,7 @@
 			files = (
 				9C41AC8D29A3819D005F1198 /* DetailViewController.swift in Sources */,
 				9C41AC7429A285A7005F1198 /* MainPresenter.swift in Sources */,
+				9C41AC9129A7BA29005F1198 /* Router.swift in Sources */,
 				9C41AC4629A2853D005F1198 /* MainViewController.swift in Sources */,
 				9C41AC4229A2853D005F1198 /* AppDelegate.swift in Sources */,
 				9C41AC8829A37F61005F1198 /* DetailPresenter.swift in Sources */,

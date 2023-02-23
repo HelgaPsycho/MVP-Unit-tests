@@ -12,21 +12,28 @@ protocol DetailViewProtocol: class {
 }
 
 protocol DetailViewPresenterProtocol {
-    init(view: DetailViewProtocol, networkservice: NetworkService, comment: Comment?)
+    init(view: DetailViewProtocol, networkservice: NetworkService,  router: RouterProtocol, comment: Comment?)
     
     func setComment()
+    func tap()
 }
 
 class DetailPresenter: DetailViewPresenterProtocol {
     
     weak var view: DetailViewProtocol?
+    var router: RouterProtocol?
     var networkService: NetworkServiceProtocol! = nil
     var comment: Comment?
     
-    required init(view: DetailViewProtocol, networkservice: NetworkService, comment: Comment?) {
+    required init(view: DetailViewProtocol, networkservice: NetworkService, router: RouterProtocol, comment: Comment?) {
         self.view = view
         self.networkService = networkservice
         self.comment = comment
+        self.router = router
+    }
+    
+    func tap() {
+        router?.popToRoot()
     }
     
     func setComment() {

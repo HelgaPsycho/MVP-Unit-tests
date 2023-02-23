@@ -25,14 +25,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix6-uE-PDG">
+                    <rect key="frame" x="116" y="651" width="189" height="109"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="pop"/>
+                    <connections>
+                        <action selector="tapAction:" destination="-1" eventType="touchUpInside" id="MgW-Lu-LUL"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="FbY-Xj-A58" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="174" id="6JB-Re-WHP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Ix6-uE-PDG" secondAttribute="bottom" constant="58" id="CnK-g1-4wH"/>
                 <constraint firstItem="FbY-Xj-A58" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="ETz-P2-v1Z"/>
+                <constraint firstItem="Ix6-uE-PDG" firstAttribute="top" secondItem="FbY-Xj-A58" secondAttribute="bottom" constant="189" id="F2C-qr-ZL2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FbY-Xj-A58" secondAttribute="bottom" constant="356" id="b5A-Wy-BMd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FbY-Xj-A58" secondAttribute="trailing" constant="38" id="deo-Ur-Ocs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ix6-uE-PDG" secondAttribute="trailing" constant="88" id="sq6-rR-YE2"/>
+                <constraint firstItem="Ix6-uE-PDG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="116" id="wYU-RM-hcb"/>
             </constraints>
             <point key="canvasLocation" x="101.5267175572519" y="19.718309859154932"/>
         </view>

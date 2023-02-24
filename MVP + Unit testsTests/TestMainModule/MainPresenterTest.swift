@@ -9,9 +9,33 @@ import XCTest
 @testable import MVP___Unit_tests
 
 class MockView: MainViewProtocol {
-    var titleTest: String?
-    func setGreeting(greeting: String) {
-        self.titleTest = greeting
+    func success() {
+        
+    }
+    
+    func failure(error: Error) {
+        
+    }
+    
+}
+
+class MockNetworkService: NetworkServiceProtocol {
+    var comments: [Comment]!
+    
+    init() {}
+    
+    convenience init(comments: [Comment]?){
+        self.init()
+        self.comments = comments
+    }
+    
+    func getComments(completion: @escaping (Result<[Comment]?, Error>) -> Void) {
+        if let comments = comments {
+            completion(.success(comments))
+        } else {
+            let error = NSError(domain: "", code: 0, userInfo: nil)
+            completion(.failure(error))
+        }
     }
     
     
@@ -20,37 +44,66 @@ class MockView: MainViewProtocol {
 final class MainPresenterTest: XCTestCase {
     
     var view: MockView!
-    var person: Person!
     var presenter: MainPresenter!
-
-    override func setUpWithError() throws {
-        view = MockView()
-        person = Person(firstName: "Baz", lastName: "Bar")
-        presenter = MainPresenter(view: view, person: person)
+    var networkService: NetworkServiceProtocol!
+    var router: RouterProtocol!
+    var  comments = [Comment]()
+    
+    override func setUp() {
+       let nav = UINavigationController()
+        let asseblyBuilder = AssemblyModuleBuilder()
         
+        router = Router(navigationController: nav, assemblyBuilder: asseblyBuilder)
     }
 
-    override func tearDownWithError() throws {
+    override func tearDown() {
         //тест, который вызывается по окончанию теста, в нем принято nil-ить объекты
         view = nil
-        person = nil
         presenter = nil
+        networkService = nil
     }
 
-    func testModuleIsNotNil() {
-        XCTAssertNotNil(view, "view is not nil")
-        XCTAssertNotNil(person, "person is not nil")
-        XCTAssertNotNil(presenter, "presenter is not nil")
-    }
-
-    func testView() {
-        presenter.showGreeting()
-        XCTAssertEqual(view.titleTest, "Baz Bar")
+    func testGetSuccessComments(){
+        let comment = Comment(postId: 1, id: 1, name: "Foo", email: "Bar", body: "Baz")
+        comments.append(comment)
+        view = MockView()
+        networkService = MockNetworkService(comments: [comment])
+        presenter = MainPresenter(view: view, networkService: networkService, router: router)
+        
+        var catchComments: [Comment]?
+        
+        networkService.getComments{result in
+            switch result {
+            case .success(let comments):
+               catchComments = comments
+            case .failure(let error):
+                print(error)
+            }
+        }
+    
+        XCTAssertNotNil(catchComments?.count, "0")
+        XCTAssertEqual(catchComments?.count, comments.count)
     }
     
-    func testPersonModel() {
-        XCTAssertEqual(person.firstName, "Bazz")
-        XCTAssertEqual(person.lastName, "Bar")
+    func testGetFailureComments(){
+        let comment = Comment(postId: 1, id: 1, name: "Foo", email: "Bar", body: "Baz")
+        comments.append(comment)
+        view = MockView()
+        networkService = MockNetworkService()
+        presenter = MainPresenter(view: view, networkService: networkService, router: router)
+        
+        var catchError: Error?
+        
+        networkService.getComments{result in
+            switch result {
+            case .success( _):
+               break
+            case .failure(let error):
+                catchError = error
+            }
+        }
+    
+        XCTAssertNotNil(catchError)
     }
 
 }
